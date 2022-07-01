@@ -1,12 +1,12 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import React from 'react';
 import {View, StyleSheet, Button} from 'react-native';
 import {useDispatch} from 'react-redux';
-import ProfileSection from '../../components/profile/ProfileSection';
-import {RootStackParamList} from '../../navigation/types/RootStackPrams';
-import {doLgout} from '../auth/login.actions';
+import ProfileSection from '../../../components/profile/ProfileSection';
+import {RootStackParamList} from '../../../navigation/types/RootStackPrams';
+import LocalStorageUtils from '../../../utils/LocalStorageUtils';
+import {doLgout} from '../../auth/login.actions';
 
 type authScreenProp = StackNavigationProp<RootStackParamList, 'Auth'>;
 
@@ -16,7 +16,7 @@ const SettingsScreen = () => {
 
   const logout = async () => {
     dispatch(doLgout());
-    await AsyncStorage.removeItem('username');
+    await LocalStorageUtils.removeItem('username');
     navigation.replace('Auth');
   };
   return (

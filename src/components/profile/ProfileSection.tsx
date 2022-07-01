@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {useSelector} from 'react-redux';
 import {ProfileInterface} from '../../screens/auth/login.reducer';
+import AppTypography from '../common/Typography/AppTypography';
 
 interface Props {
   screen: string;
@@ -10,8 +11,6 @@ interface Props {
 const ProfileSection = ({screen}: Props) => {
   const profileData = useSelector((state: any) => state.getProfile);
   const profileDetails: ProfileInterface = profileData?.data;
-
-  console.log({profileDetails});
   return (
     <View style={styles.screen}>
       <Image
@@ -19,11 +18,11 @@ const ProfileSection = ({screen}: Props) => {
         style={styles.image}
         resizeMode="contain"
       />
-      <Text>
+      <AppTypography>
         {profileDetails?.login}
         {'-'}browsing {screen}
         screen
-      </Text>
+      </AppTypography>
     </View>
   );
 };
