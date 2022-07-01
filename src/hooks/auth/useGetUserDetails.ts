@@ -3,9 +3,9 @@ import {StackNavigationProp} from "@react-navigation/stack";
 import { useCallback, useEffect, useState } from "react";
 import { Alert } from "react-native";
 import {useDispatch, useSelector} from "react-redux";
+import { ProfileInterface } from "../../interfaces/profile/Profile.interface";
 import {RootStackParamList} from "../../navigation/types/RootStackPrams";
 import { getProfileRequest } from "../../screens/auth/login.actions";
-import { ProfileInterface } from "../../screens/auth/login.reducer";
 import LocalStorageUtils from "../../utils/LocalStorageUtils";
 
 type authScreenProp = StackNavigationProp<RootStackParamList, 'Auth'>;

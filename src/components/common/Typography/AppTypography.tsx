@@ -1,8 +1,9 @@
+import React from "react";
 import { StyleSheet, Text, TextProps } from "react-native";
 
 const AppTypography = (props: TextProps) => {
     return (
-        <Text>{props.children}</Text>
+        <Text style={props.style}>{props.children}</Text>
     );
 }
 

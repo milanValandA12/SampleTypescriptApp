@@ -4,7 +4,7 @@ import {
   getProfileFail,
   getProfileSuccess,
 } from './login.actions';
-import {getProfile} from '../../api';
+import {getProfile} from '../../api/profile';
 import {Action} from '../../redux/reducers';
 import {Alert} from 'react-native';
 

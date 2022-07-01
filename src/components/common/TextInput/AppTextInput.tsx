@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, TextInput, TextInputAndroidProps, TextInputIOSProps, TextInputProps } from "react-native";
 
 const AppTextInput = (props: TextInputProps) => {

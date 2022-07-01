@@ -1,20 +1,19 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import ProfileSection from '../../components/profile/ProfileSection';
+import RepositoryList from '../../../components/repository/list';
 
 const HomeScreen = () => {
   return (
     <View style={styles.screen}>
-      <ProfileSection screen="Home" />
+      <RepositoryList />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   screen: {
+    flex: 1,
     padding: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 

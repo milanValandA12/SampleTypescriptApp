@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import {useSelector} from 'react-redux';
-import {ProfileInterface} from '../../screens/auth/login.reducer';
+import { ProfileInterface } from '../../interfaces/profile/Profile.interface';
 import AppTypography from '../common/Typography/AppTypography';
 
 interface Props {

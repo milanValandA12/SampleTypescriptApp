@@ -6,13 +6,6 @@ import {
 } from './login.actions';
 import {Action, State} from '../../redux/reducers';
 
-export interface ProfileInterface {
-  login: string;
-  id: number;
-  avatar_url: string;
-  url: string;
-}
-
 const initialState: State = {fetching: false, data: null, err: null};
 
 export const getProfile = (state: State = initialState, action: Action) => {

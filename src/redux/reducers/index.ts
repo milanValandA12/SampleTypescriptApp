@@ -3,6 +3,7 @@ import {combineReducers} from 'redux';
 import {CLEAR_NETWORK_FAIL, SEND_NETWORK_FAIL} from './../actions';
 
 import {getProfile} from '../../screens/auth/login.reducer';
+import {getRepository} from '../../screens/main/home/home.reducer';
 
 export interface State {
   fetching: boolean;
@@ -32,5 +33,5 @@ const sendNetworkFail = (state: State = initialState, action: Action) => {
   }
 };
 
-const rootReducer = combineReducers({sendNetworkFail, getProfile});
+const rootReducer = combineReducers({sendNetworkFail, getProfile, getRepository});
 export default rootReducer;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import AppButton from '../../components/common/Button/AppButton';
 import AppTextInput from '../../components/common/TextInput/AppTextInput';
 import AppTypography from '../../components/common/Typography/AppTypography';
