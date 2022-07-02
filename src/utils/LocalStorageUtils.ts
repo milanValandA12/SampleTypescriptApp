@@ -2,6 +2,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LocalStorageUtils = {
   setItem: async (key: string, value: string): Promise<boolean> => {
+    if (!key) {
+      return false;
+    }
     try {
       await AsyncStorage.setItem(key, String(value));
       return true;
@@ -10,6 +13,9 @@ const LocalStorageUtils = {
     }
   },
   getItem: async (key: string): Promise<string | null> => {
+    if (!key) {
+      return null;
+    }
     try {
       const data = await AsyncStorage.getItem(key);
       return data;
