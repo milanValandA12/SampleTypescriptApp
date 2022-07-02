@@ -15,11 +15,11 @@ To run the application for android
 Attached SS of screens
 
 Login screen
-![image](https://user-images.githubusercontent.com/108510955/176882477-10f10d92-af9c-43e9-90cd-4f030c920a59.png)
+![image](https://user-images.githubusercontent.com/108510955/176990524-8c819487-4dcd-4eb5-a7c6-fa8915a4004a.png)
 
 Home Search and List screen
-![image](https://user-images.githubusercontent.com/108510955/176882902-093885fa-444c-4f88-8edb-a972573a813b.png)
-
+![image](https://user-images.githubusercontent.com/108510955/176990535-7dd8b3da-77a3-4da5-bc4b-98b752a28832.png)
 
 Setting screen
-![image](https://user-images.githubusercontent.com/108510955/176882738-df995667-02ad-4f65-aecd-adc279f5dc10.png)
+![image](https://user-images.githubusercontent.com/108510955/176990542-abf22e82-d654-4d69-ad48-afc169011659.png)
+
