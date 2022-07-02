@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Image} from 'react-native';
 import {useSelector} from 'react-redux';
+import theme from '../../config/constants/theme.contants';
 import { ProfileInterface } from '../../interfaces/profile/Profile.interface';
 import AppTypography from '../common/Typography/AppTypography';
 
@@ -20,8 +21,7 @@ const ProfileSection = ({screen}: Props) => {
       />
       <AppTypography>
         {profileDetails?.login}
-        {'-'}browsing {screen}
-        screen
+        {'- '} {screen}
       </AppTypography>
     </View>
   );
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     width: 100,
     borderRadius: 100,
     borderWidth: 1,
-    borderColor: '#000000',
+    borderColor: theme.primary,
     marginBottom: 12,
   },
 });

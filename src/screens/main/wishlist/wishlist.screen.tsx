@@ -1,11 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {View, StyleSheet} from 'react-native';
 import ProfileSection from '../../../components/profile/ProfileSection';
 
 const WishlistScreen = () => {
+  const {t} = useTranslation();
   return (
     <View style={styles.screen}>
-      <ProfileSection screen="Wish list" />
+      <ProfileSection screen={t('common:wishlist')} />
     </View>
   );
 };

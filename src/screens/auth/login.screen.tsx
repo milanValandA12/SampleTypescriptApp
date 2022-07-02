@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {StyleSheet, View} from 'react-native';
 import AppButton from '../../components/common/Button/AppButton';
 import AppTextInput from '../../components/common/TextInput/AppTextInput';
@@ -7,15 +8,16 @@ import useGetUserDetails from '../../hooks/auth/useGetUserDetails';
 
 const LoginScreen = () => {
   const {username, setUsername, getProfile, fetching} = useGetUserDetails();
+  const {t} = useTranslation();
   return (
     <View style={styles.screen}>
-      <AppTypography>Enter Github Username</AppTypography>
+      <AppTypography>{t('login:form.label')}</AppTypography>
       <AppTextInput
         onChangeText={text => setUsername(text)}
-        placeholder="Username"
+        placeholder={t('login:form.label')}
         value={username}
       />
-      <AppButton title="SignIButton" textKey='Get Details' loading={fetching} onPress={getProfile} />
+      <AppButton title="SignIButton" textKey={t('login:getDetails')} loading={fetching} onPress={getProfile} />
     </View>
   );
 };

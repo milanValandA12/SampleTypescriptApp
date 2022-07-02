@@ -6,7 +6,6 @@ import {
 } from './login.actions';
 import {getProfile} from '../../api/profile';
 import {Action} from '../../redux/reducers';
-import {Alert} from 'react-native';
 
 export function* watchGetProfile() {
   yield takeLatest(GET_PROFILE_REQUEST, handleGetProfile);
@@ -18,6 +17,5 @@ function* handleGetProfile(action: Action) {
     yield put(getProfileSuccess(response.data));
   } catch (error) {
     yield put(getProfileFail(error));
-    Alert.alert('Error', 'Please check your username!');
   }
 }

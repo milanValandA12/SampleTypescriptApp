@@ -1,5 +1,7 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Pressable, StyleSheet, View } from "react-native";
+import theme from "../../../config/constants/theme.contants";
 import URLLinkingUtils from "../../../utils/URLLinkingUtils";
 import AppTypography from "../../common/Typography/AppTypography";
 import formatUtils from "./formatUtils";
@@ -17,6 +19,7 @@ export interface RepositoryItemProp {
 }
 
 const RepositoryItem = ({item}: RepositoryItemProp) => {
+    const { t } = useTranslation();
     return (
         <View style={style.container}>
             <AppTypography>
@@ -26,10 +29,10 @@ const RepositoryItem = ({item}: RepositoryItemProp) => {
                 {formatUtils.getDescription(item.description)}
             </AppTypography>
             <AppTypography style={style.openIssue}>
-                Open Isssue: {item.open_issues_count}
+                {t('home:openIssue')}: {item.open_issues_count}
             </AppTypography>
             <AppTypography style={style.tags}>
-                Tags: {formatUtils.convertTagsToString(item.topics)}
+                {t('home:tags')}: {formatUtils.convertTagsToString(item.topics)}
             </AppTypography>
             <Pressable
                 onPress={() => URLLinkingUtils.openURL(item.html_url)}
@@ -45,14 +48,14 @@ const RepositoryItem = ({item}: RepositoryItemProp) => {
 const style = StyleSheet.create({
     container: {
         margin: 4,
-        borderColor: '#000000',
+        borderColor: theme.primary,
         borderWidth: 1,
         borderRadius: 4,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: theme.secondary,
         padding: 8,
     },
     description: {
-        color: 'gray',
+        color: theme.primaryLight,
         marginVertical: 8,
     },
     tags: {
@@ -62,7 +65,8 @@ const style = StyleSheet.create({
         marginVertical: 4,
     },
     link: {
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+        color: theme.link,
     }
 });
 

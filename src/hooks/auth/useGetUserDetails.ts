@@ -1,10 +1,11 @@
-import {useNavigation} from "@react-navigation/native";
-import {StackNavigationProp} from "@react-navigation/stack";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 import { useCallback, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Alert } from "react-native";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ProfileInterface } from "../../interfaces/profile/Profile.interface";
-import {RootStackParamList} from "../../navigation/types/RootStackPrams";
+import { RootStackParamList } from "../../navigation/types/RootStackPrams";
 import { getProfileRequest } from "../../screens/auth/login.actions";
 import LocalStorageUtils from "../../utils/LocalStorageUtils";
 
@@ -12,6 +13,7 @@ type authScreenProp = StackNavigationProp<RootStackParamList, 'Auth'>;
 
 
 const useGetUserDetails = () => {
+  const { t } = useTranslation();
   const [username, setUsername] = useState('');
   const dispatch = useDispatch();
   const navigation = useNavigation<authScreenProp>();
@@ -20,7 +22,7 @@ const useGetUserDetails = () => {
 
   const getProfile = () => {
     if (!username) {
-      Alert.alert('Error', 'Please enter username!');
+      Alert.alert(t('common:error'), t('login:error.required'));
       return;
     }
     dispatch(getProfileRequest(username));
@@ -48,7 +50,7 @@ const useGetUserDetails = () => {
     checkExistingLoggedInUser();
   }, []);
 
-  return {username, setUsername, getProfile, fetching: profileData?.fetching};
+  return { username, setUsername, getProfile, fetching: profileData?.fetching };
 };
 
 export default useGetUserDetails;

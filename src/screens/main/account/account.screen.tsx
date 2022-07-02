@@ -1,11 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {View, StyleSheet} from 'react-native';
 import ProfileSection from '../../../components/profile/ProfileSection';
 
 const AccountScreen = () => {
+  const {t} = useTranslation();
   return (
     <View style={styles.screen}>
-      <ProfileSection screen="Account" />
+      <ProfileSection screen={t('common:account')} />
     </View>
   );
 };

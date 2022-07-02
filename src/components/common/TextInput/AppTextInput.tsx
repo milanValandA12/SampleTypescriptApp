@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, TextInput, TextInputAndroidProps, TextInputIOSProps, TextInputProps } from "react-native";
+import theme from "../../../config/constants/theme.contants";
 
 const AppTextInput = (props: TextInputProps) => {
     return (
@@ -15,7 +16,7 @@ const AppTextInput = (props: TextInputProps) => {
 const styles = StyleSheet.create({
     textInput: {
         borderWidth: 1,
-        borderColor: '#000000',
+        borderColor: theme.primary,
         padding: 8,
         height: 50,
         borderRadius: 12,

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FlatList, View } from "react-native";
 import useGetRepository from "../../../hooks/repository/useGetRepository";
 import AppTextInput from "../../common/TextInput/AppTextInput";
@@ -6,13 +7,13 @@ import RepositoryItem, { RepositoryItemProp } from "./item";
 
 const RepositoryList = () => {
     const { data, fetching, query, setQuery, getRepository } = useGetRepository();
-    console.log({ data, fetching })
+    const { t } = useTranslation();
     return (
         <View>
             <AppTextInput
                 value={query}
                 onChangeText={text => setQuery(text)}
-                placeholder="search"
+                placeholder={t('common:search')}
             />
             <FlatList
                 data={data}
