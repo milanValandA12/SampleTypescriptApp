@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useDispatch } from 'react-redux';
 import AppButton from '../../../components/common/Button/AppButton';
 import ProfileSection from '../../../components/profile/ProfileSection';
@@ -17,8 +17,6 @@ const SettingsScreen = () => {
   const navigation = useNavigation<authScreenProp>();
   const dispatch = useDispatch();
   const {t, i18n} = useTranslation();
-  const selectedLngCode = i18n.language;
-
   const logout = async () => {
     dispatch(doLgout());
     await LocalStorageUtils.removeItem('username');
@@ -29,8 +27,8 @@ const SettingsScreen = () => {
       <ProfileSection screen={t('common:settings')} />
       <View style={styles.row}>
         {AVALAILABLE_LANG_CODES.map(code => {
-          return <AppButton loading={false} title={code} textKey={code} onPress={() => {
-            i18n.changeLanguage(code);
+          return <AppButton key={code} loading={false} title={code} textKey={code} onPress={() => {
+            i18n?.changeLanguage(code);
           }} />
         })}
       </View>
