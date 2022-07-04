@@ -1,4 +1,4 @@
-import theme from "./theme.contants";
+import theme from "../../../src/config/constants/theme.contants";
 
 test('Theme Constant test: Check base URL set', () => {
     expect(theme.primary).toBeDefined();

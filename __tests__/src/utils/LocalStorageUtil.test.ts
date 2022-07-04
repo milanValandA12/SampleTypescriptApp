@@ -1,4 +1,5 @@
-import LocalStorageUtils from './LocalStorageUtils';
+import LocalStorageUtils from "../../../src/utils/LocalStorageUtils";
+
 const username = 'Milan';
 
 describe('LocalStorageUtils test', () => {

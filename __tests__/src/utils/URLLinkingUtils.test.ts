@@ -1,4 +1,5 @@
-import URLLinkingUtils from "./URLLinkingUtils";
+import URLLinkingUtils from "../../../src/utils/URLLinkingUtils";
+
 const validURL = 'https://google.com';
 
 describe('URLLinkingUtils test', () => {
