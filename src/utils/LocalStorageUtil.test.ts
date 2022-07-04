@@ -8,16 +8,14 @@ describe('LocalStorageUtils test', () => {
   });
 
   test('LocalStorageUtils test: getItem', async () => {
-    await LocalStorageUtils.setItem('username', username);
     const saved = await LocalStorageUtils.getItem('username');
     expect(saved).toBe(username);
   });
 
   test('LocalStorageUtils test: removeItem', async () => {
-    await LocalStorageUtils.setItem('username', username);
     const saved = await LocalStorageUtils.removeItem('username');
-    const checked = await LocalStorageUtils.getItem('username');
     expect(saved).toBe(true);
+    const checked = await LocalStorageUtils.getItem('username');
     expect(checked).toBeNull();
   });
 
